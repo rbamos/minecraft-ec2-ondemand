@@ -1,0 +1,1 @@
+tmux new-session -d -s monitor 'python3 ~/setup/monitor.py'

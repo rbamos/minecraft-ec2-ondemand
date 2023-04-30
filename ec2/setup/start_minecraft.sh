@@ -1,0 +1,1 @@
+tmux new-session -d -s minecraft 'cd ~/minecraft/; ./start.sh'
