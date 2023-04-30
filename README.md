@@ -38,7 +38,7 @@ file an issue so I know there's demand for it).
 I've heard tons of horror stories about people getting surprise bills with AWS. Don't get caught floating a $500 bill
 because you forgot to turn off an instance you didn't mean to launch.
 
-https://us-east-1.console.aws.amazon.com/billing/home?region=us-east-1#/budgets/overview
+A Budget can be set up to alert you when this happens. I *strongly* recommend setting one. This is done under Billing -> Budget.
 
 The cost of this project will be (roughly):
 * $0.50/month for Route53
