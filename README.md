@@ -1,4 +1,4 @@
-# minecraft-ec2-ondemand
+# Run Minecraft on EC2 for a reasonable fee
 This repository contains instructions and scripts for running a minecraft server on EC2 on-demand.
 
 Feel free to file an issue or reach out directly with any questions.
@@ -25,7 +25,7 @@ with Docker. Many thanks to them.
 If you're looking for something simpler to set up, that project has an Infrastructure as Code implementation for faster
 deployment.
 
-I wanted to tweak that to run on EC2 for better performance and easier server console access.
+I wanted to tweak that to run on EC2 for better performance, faster boot, and easier server console access.
 
 ## Prerequesites
 1. You need an AWS account.
@@ -172,6 +172,11 @@ You should be done now! Boot up Minecraft, add your server to your server list. 
 instance will start to boot. Wait a few minutes and your game will be live.
 
 Remmeber that the first time the world launches is always the slowest.
+
+### Pre-booting your servers
+Your players may not love waiting a few minutes while the game boots. They can preboot the server by attempting to visit your server's domain name in their browser. This will trigger the lambda and start the boot process. With local Minecraft taking a few minutes to load anyways, this means the wait should be minimal.
+
+Another option is to embed a 1x1 `<img>` that points to your server's domain in a website you host; you can point your players to that site. Be cautious with this, as a webcrawl may also boot your server.
 
 ## Possible improvements
 * Better boot time could be achieved by hibernating instead of shutting down the EC2 instance
