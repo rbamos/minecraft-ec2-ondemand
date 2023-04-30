@@ -1,16 +1,31 @@
 # minecraft-ec2-ondemand
-Instructions and scripts for running a minecraft server on EC2 on-demand
+This repository contains instructions and scripts for running a minecraft server on EC2 on-demand.
+
+Feel free to file an issue or reach out directly with any questions.
+
+## Motivation
+Running a modded Minecraft server on a dedicated host can cost $35+ per month for a server with adequate performance.
+That's the lifetime price of Minecraft, or a few months' subscription for other games. This makes running a cloud
+modded Minecraft server pretty cost-prohibitive.
+
+Amazon AWS lets you pay for the resources you use, and most people aren't playing Minecraft 24/7, so this provides a
+work-around -- we can turn off our server when it's not in use and cut that cost down something manageable. I'm
+estimating around $10/month for a modded server.
+
+The challenge is in enabling and disabling the server as-needed. The core solution comes from
+[doctorray117](https://github.com/doctorray117/minecraft-ondemand), who showed how to launch a Minecraft server when
+a DNS request is made to that server.
+
+## Credit
 
 These instructions lean heavily on 
 [doctorray117's Minecraft-OnDemand project](https://github.com/doctorray117/minecraft-ondemand), which does this but
-with Docker.
+with Docker. Many thanks to them.
 
 If you're looking for something simpler to set up, that project has an Infrastructure as Code implementation for faster
 deployment.
 
 I wanted to tweak that to run on EC2 for better performance and easier server console access.
-
-Feel free to file an issue or reach out directly with any questions.
 
 ## Prerequesites
 1. You need an AWS account.
