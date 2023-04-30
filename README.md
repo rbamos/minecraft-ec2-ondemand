@@ -10,6 +10,8 @@ deployment.
 
 I wanted to tweak that to run on EC2 for better performance and easier server console access.
 
+Feel free to file an issue or reach out directly with any questions.
+
 ## Prerequesites
 1. You need an AWS account.
 2. You need a domain name with the domain or a subdomain on Route53 (Amazon's DNS service).
