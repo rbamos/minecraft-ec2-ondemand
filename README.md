@@ -77,7 +77,7 @@ If your installation doesn't include it, create a file
 ```bash
 ~/minecraft/start.sh
 ```
-which starts your server. Make sure to give it enough RAM but don't do too much. For my `c5.xlarge`, I found `-Xms5G` to
+which starts your server. Make sure to give it enough RAM but don't do too much. For my `c5.xlarge`, I found `-Xmx5G` to
 be the right size.
 
 ## Set up the start-up routine
