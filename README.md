@@ -5,7 +5,7 @@ Feel free to file an issue or reach out directly with any questions.
 
 ## Motivation
 Running a modded Minecraft server on a dedicated host can cost $35+ per month for a server with adequate performance.
-That's the lifetime price of Minecraft, or a few months' subscription for other games. This makes running a cloud
+That's nearly the lifetime price of Minecraft, or a few months' subscription for other games. This makes running a cloud
 modded Minecraft server pretty cost-prohibitive.
 
 Amazon AWS lets you pay for the resources you use, and most people aren't playing Minecraft 24/7, so this provides a
@@ -30,9 +30,9 @@ I wanted to tweak that to run on EC2 for better performance and easier server co
 ## Prerequesites
 1. You need an AWS account.
 2. You need a domain name with the domain or a subdomain on Route53 (Amazon's DNS service).
-3. You should have a decent understanding of Bash and how to set up a Minecraft server 
+3. You should have a decent understanding of Bash and how to set up a Minecraft server .
 4. An understanding of AWS. This guide doesn't go into all the details for now (if you want more details, please
-file an issue so I know there's demand for it)
+file an issue so I know there's demand for it).
 
 ## Billing alert
 I've heard tons of horror stories about people getting surprise bills with AWS. Don't get caught floating a $500 bill
