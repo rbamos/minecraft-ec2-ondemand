@@ -76,6 +76,8 @@ have, etc.
 I recommend looking at the c-series (compute optimized) instances. This will be your biggest expense so choose
 carefully. [Price comparison](https://aws.amazon.com/ec2/pricing/on-demand/). I went with `c5.xlarge`.
 
+I used Amazon Linux, you may need to change these instructions if you use a different OS.
+
 Set up an SSH key.
 
 Your EC2 instance will need to be assigned to a role with the following permissions:
