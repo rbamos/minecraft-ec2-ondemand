@@ -67,6 +67,8 @@ volume space, and so is cheaper by about $0.50/mo.
 to your cost. Even though going into hibernation is slow, AWS does not charge for your instance while it is shutting
 down.
 
+I recommend the Hibernate strategy, since the fast boot times leads to a better player experience.
+
 ## Launch an EC2 instance
 You should set up an EC2 instance. What resources you'll need depends on if you are running modpacks, how many users you
 have, etc.
