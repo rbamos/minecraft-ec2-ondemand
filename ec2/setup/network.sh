@@ -1,6 +1,6 @@
-INSTANCE_ID=i-0db1ce3d8171c7e44
-HOSTED_ZONE_ID=Z0061764DPB0OHYDP9A4
-HOSTNAME=dw20.mcserver.cyou
+INSTANCE_ID=
+HOSTED_ZONE_ID=
+HOSTNAME=
 
 setup_zone() {
     PUBLICIP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID  --query 'Reservations[*].Instances[*].PublicIpAddress' --output text)

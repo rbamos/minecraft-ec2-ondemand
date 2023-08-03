@@ -43,12 +43,17 @@ A Budget can be set up to alert you when this happens. I *strongly* recommend se
 The cost of this project will be (roughly):
 * $0.50/month for Route53
 * $0.17c/hour usage for EC2 (if using `c5.xlarge`)
-* $0.50/month for EBS (if using 10GB)
-* $0.009/hr/user (very rough estimate) 
+* $1.50/month for EBS (if using 30GB)
+* $0.009/hr/user in network egress fees (very rough estimate) 
 * A few pennies for Lambda
 
 Please let me know what you are charged; I'm still waiting to see a full month's usage bill on this setup and will
 update it accordingly.
+
+For your first year of AWS, you get up to 30GB of EBS free as part of AWS Free Tier.
+
+### Actual bills
+During two months of heavy usage, I had bills of $18.78 and $18.19. During a moderate usage month, I had a bill of $11.28. During an idle month I had a bill of $1.30.
 
 ## Launch an EC2 instance
 You should set up an EC2 instance. What resources you'll need depends on if you are running modpacks, how many users you
@@ -179,5 +184,5 @@ Your players may not love waiting a few minutes while the game boots. They can p
 Another option is to embed a 1x1 `<img>` that points to your server's domain in a website you host; you can point your players to that site. Be cautious with this, as a webcrawl may also boot your server.
 
 ## Possible improvements
-* Better boot time could be achieved by hibernating instead of shutting down the EC2 instance
+* ~~Better boot time could be achieved by hibernating instead of shutting down the EC2 instance~~
 * Moving activity monitoring & shutdown to another instance could provide better robustness

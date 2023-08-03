@@ -7,8 +7,8 @@ import libtmux
 MAX_T = 10
 BOOT_T = 15
 
-HIBERNATE = True
-INSTANCE_ID = "i-0db1ce3d8171c7e44"
+HIBERNATE = False
+INSTANCE_ID = ""
 
 def monitor(is_first_boot = False):
   if is_first_boot:
