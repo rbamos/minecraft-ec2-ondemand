@@ -70,6 +70,16 @@ Your EC2 instance will need to be assigned to a role with the following permissi
 
 Make sure your security group allows ingress on ports 22 (SSH) and 25565 (Minecraft)
 
+Important settings:
+* Set the EBS volume to encrypted
+* Consider the size of your EBS volume carefully
+  * I found 30GB to be stable for me. 20GB may be adequate.
+  * Note: 30GB is included in free tier
+* If using the hibernate strategy, enable hibernation
+  * Note: You cannot enable hibernation later without recreating the instance.
+  * You will need to allocate additional space to the EBS volume for your RAM.
+    e.g. if you enable hibernation on an instance with 8GB of ram, you'll need to add an additional 8GB of space to EBS
+
 ## Set up Minecraft
 SSH into your EC2 instance. Install the Minecraft server.
 
