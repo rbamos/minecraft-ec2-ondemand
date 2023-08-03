@@ -53,7 +53,8 @@ Please let me know what you are charged so I give a more accurate representation
 For your first year of AWS, you get up to 30GB of EBS free as part of AWS Free Tier.
 
 ### Actual bills
-During two months of heavy usage, I had bills of $18.78 and $18.19. During a moderate usage month, I had a bill of $11.28. During an idle month I had a bill of $1.30.
+During two months of heavy usage, I had bills of $18.78 and $18.19. During a moderate usage month, I had a bill of 
+$11.28. During an idle month I had a bill of $1.30.
 
 ## Launch an EC2 instance
 You should set up an EC2 instance. What resources you'll need depends on if you are running modpacks, how many users you
@@ -70,15 +71,12 @@ Your EC2 instance will need to be assigned to a role with the following permissi
 
 Make sure your security group allows ingress on ports 22 (SSH) and 25565 (Minecraft)
 
-### Important settings
-* Set the EBS volume to encrypted
-* Consider the size of your EBS volume carefully
-  * I found 30GB to be stable for me. 20GB may be adequate.
-  * Note: 30GB is included in free tier
-* If using the hibernate strategy, enable hibernation
-  * Note: You cannot enable hibernation later without recreating the instance.
-  * You will need to allocate additional space to the EBS volume for your RAM.
-    e.g. if you enable hibernation on an instance with 8GB of ram, you'll need to add an additional 8GB of space to EBS
+Set the EBS volume to encrypted. Consider the size of your EBS volume carefully. I found 30GB to be stable for me. 20GB
+may be adequate. Note: 30GB is included in free tier.
+
+If using the hibernate strategy, enable hibernation. You will need to allocate additional space to the EBS volume for 
+your RAM e.g. if you enable hibernation on an instance with 8GB of ram, you'll need to add an additional 8GB of space to
+ EBS. **You cannot enable hibernation later without recreating the instance.**
 
 ## Set up Minecraft
 SSH into your EC2 instance. Install the Minecraft server.
