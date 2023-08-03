@@ -1,1 +1,2 @@
 @reboot ~/setup/start.sh
+* * * * * ~/setup/start.sh

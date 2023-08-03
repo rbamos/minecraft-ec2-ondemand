@@ -46,9 +46,9 @@ The cost of this project will be (roughly):
 * $1.50/month for EBS (if using 30GB)
 * $0.009/hr/user in network egress fees (very rough estimate) 
 * A few pennies for Lambda
+* $2/year for your domain name, if you go with a low cost TLD
 
-Please let me know what you are charged; I'm still waiting to see a full month's usage bill on this setup and will
-update it accordingly.
+Please let me know what you are charged so I give a more accurate representation of cost.
 
 For your first year of AWS, you get up to 30GB of EBS free as part of AWS Free Tier.
 
@@ -96,7 +96,15 @@ pip3 install --upgrade --user awscli mcstatus libtmux
 There may be more dependencies; install them if requested.
 
 From the `ec2/` folder, copy the contents of the `setup/` folder into `~`. Go through each of the files; there are
-fields for you to fill out.
+fields for you to fill out. Specifically:
+
+* `monitor.py`: If not using the hibernate strategy, you do not need to modify this file
+  * `HIBERNATE`: `True`/`False` if you want to use the shut down or hibernate strategy
+  * `INSTANCE_ID`: Your EC2 instance ID (only required for hibernating)
+* `network.sh`:
+  * `INSTANCE_ID`: Your EC2 instance ID
+  * `HOSTED_ZONE_ID`: Your Route53 hosted zone ID
+  * `HOSTNAME`: Your hostname (e.g. minecraft.example.com)
 
 Set up the cron job:
 ```bash
@@ -105,6 +113,7 @@ crontab -e
 And add:
 ```
 @reboot ~/setup/start.sh
+* * * * * ~/setup/start.sh
 ```
 
 ### Test everything
