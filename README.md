@@ -38,7 +38,8 @@ file an issue so I know there's demand for it).
 I've heard tons of horror stories about people getting surprise bills with AWS. Don't get caught floating a $500 bill
 because you forgot to turn off an instance you didn't mean to launch.
 
-A Budget can be set up to alert you when this happens. I *strongly* recommend setting one. This is done under Billing -> Budget.
+A Budget can be set up to alert you when this happens. I *strongly* recommend setting one. This is done under Billing ->
+ Budget.
 
 The cost of this project will be (roughly):
 * $0.50/month for Route53
@@ -56,6 +57,16 @@ For your first year of AWS, you get up to 30GB of EBS free as part of AWS Free T
 During two months of heavy usage, I had bills of $18.78 and $18.19. During a moderate usage month, I had a bill of 
 $11.28. During an idle month I had a bill of $1.30.
 
+## Decide if you are using the shut down or hibernate strategy
+There are two strategies for disabling your Minecraft instance.
+
+**Shut down**: This shuts down the instance. It's quick to shut down, but it's slow to boot. This requires less EBS
+volume space, and so is cheaper by about $0.50/mo.
+
+**Hibernate**: This hibernates the instance. Hibernation is slow, but booting is rapid. This will add around $0.50/mo
+to your cost. Even though going into hibernation is slow, AWS does not charge for your instance while it is shutting
+down.
+
 ## Launch an EC2 instance
 You should set up an EC2 instance. What resources you'll need depends on if you are running modpacks, how many users you
 have, etc.
@@ -68,6 +79,7 @@ Set up an SSH key.
 Your EC2 instance will need to be assigned to a role with the following permissions:
 * Route53: ChangeResourceRecordSets on your domain's hosted zone
 * EC2: DescribeInstances on your instance
+* EC2: StopInstances on your instance, if you are using the hibernate strategy
 
 Make sure your security group allows ingress on ports 22 (SSH) and 25565 (Minecraft)
 
@@ -196,9 +208,12 @@ instance will start to boot. Wait a few minutes and your game will be live.
 Remmeber that the first time the world launches is always the slowest.
 
 ### Pre-booting your servers
-Your players may not love waiting a few minutes while the game boots. They can preboot the server by attempting to visit your server's domain name in their browser. This will trigger the lambda and start the boot process. With local Minecraft taking a few minutes to load anyways, this means the wait should be minimal.
+Your players may wish for a quicker boot sequence. They can preboot the server by attempting to visit your server's
+domain name in their browser. This will trigger the lambda and start the boot process. With local Minecraft taking a few
+minutes to load anyways, this means the wait should be minimal.
 
-Another option is to embed a 1x1 `<img>` that points to your server's domain in a website you host; you can point your players to that site. Be cautious with this, as a webcrawl may also boot your server.
+Another option is to embed a 1x1 `<img>` that points to your server's domain in a website you host; you can point your 
+players to that site. Be cautious with this, as a webcrawl may also boot your server.
 
 ## Possible improvements
 * ~~Better boot time could be achieved by hibernating instead of shutting down the EC2 instance~~
